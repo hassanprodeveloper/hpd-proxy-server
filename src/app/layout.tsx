@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import NextTopLoader from "nextjs-toploader";
-
-import AuthOverlay from "@/components/AuthOverlay";
-
-import Providers from "@/services/providers";
 
 import "./globals.css";
 
@@ -22,15 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Providers>
-          <NextTopLoader color="#f29e27" showSpinner={false} />
-
-          <AuthOverlay />
-
-          {children}
-        </Providers>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
