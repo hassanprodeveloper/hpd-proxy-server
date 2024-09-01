@@ -1,0 +1,21 @@
+{
+    "typescriptReactNativeElementFunctionalComponent": {
+      "prefix": "fc",
+      "body": [
+        "import React from 'react';",
+        "",
+        "const ${1:${TM_FILENAME_BASE}} = () => {",
+        "",
+        "  return (",
+        "    <div>",
+        "      <span>$1</span>",
+        "    </div>",
+        "  );",
+        "};",
+        "",
+        "export default ${1:${TM_FILENAME_BASE}};",
+      ],
+      "description": "Creates a React Arrow Function Component with ES7 module system.",
+      "scope": "typescript,typescriptreact,javascript,javascriptreact"
+    }
+  }
