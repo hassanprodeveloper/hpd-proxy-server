@@ -2,9 +2,18 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
+    const headers = new Headers(req.headers);
+    headers.set("Access-Control-Allow-Origin", "*");
+    headers.set("Access-Control-Allow-Methods", "POST, OPTIONS");
+    headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+    // Add preflight handling
+    if (req.method === "OPTIONS") {
+      return new NextResponse(null, { status: 204, headers });
+    }
+
     const { endpoint, method, body } = await req.json();
 
-    const headers = new Headers(req.headers);
     if (req.headers.has("authorization")) {
       headers.set("Authorization", req.headers.get("authorization")!);
     }
